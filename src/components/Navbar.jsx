@@ -1,14 +1,19 @@
+import Link from "next/link";
+
 function Navbar() {
   let links = (
     <>
       <li>
-        <a href="/about">About</a>
+        <Link href="/about">About</Link>
       </li>
       <li>
-        <a href="/project">Project</a>
+        <Link href="/project">Project</Link>
       </li>
       <li>
-        <a href="/contact">Contact</a>
+        <Link href="/blogs">Blogs</Link>
+      </li>
+      <li>
+        <Link href="/contact">Contact</Link>
       </li>
     </>
   );
@@ -41,7 +46,9 @@ function Navbar() {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <Link href="/" className="btn btn-ghost text-xl">
+          daisyUI
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
