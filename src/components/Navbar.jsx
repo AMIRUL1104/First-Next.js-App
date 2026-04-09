@@ -19,7 +19,7 @@ function Navbar() {
   );
 
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-100 shadow-sm sticky top-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -54,7 +54,13 @@ function Navbar() {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        {/* <a className="btn">Button</a> */}
+        {/* <label
+          htmlFor="my-drawer-3"
+          className="btn drawer-button lg:hidden mt-2.5 ml-auto mr-0"
+        >
+          SideBar
+        </label> */}
       </div>
     </div>
   );

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const blogs = [
   {
     id: 1,
@@ -251,47 +253,47 @@ router.push("/dashboard")</code></pre>
   },
 ];
 
-const BookDetailsPage = async ({ params }) => {
-  const { blogId } = await params;
-  const blog = blogs.find((b) => b.id === parseInt(blogId));
-
-  if (!blog) {
-    return (
-      <div className="text-center text-red-500 text-xl mt-10">
-        Blog not found
-      </div>
-    );
-  }
-
+function BlogsDetailsLayout({ children }) {
   return (
-    <div className="max-w-3xl mt-5 mx-auto">
-      {/* Header Card */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-        <div className="p-8 border-b border-gray-100">
-          <span className="inline-block bg-blue-50 text-blue-700 text-xs font-medium px-3 py-1 rounded-full mb-4">
-            {blog.category}
-          </span>
-          <h1 className="text-2xl font-bold text-gray-900 mb-3">
-            {blog.title}
-          </h1>
-          <p className="text-gray-500 text-base leading-relaxed mb-5">
-            {blog.description}
-          </p>
-          <div className="flex gap-6 text-sm text-gray-400">
-            <span>✍️ {blog.author}</span>
-            <span>📅 {blog.date}</span>
-            <span>⏱️ {blog.readTime}</span>
-          </div>
-        </div>
+    <div className="drawer lg:drawer-open">
+      <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content px-2.5 mb-5 flex flex-col items-center justify-center">
+        {/* dwawer for small device  */}
+        {/* <label
+          htmlFor="my-drawer-3"
+          className="btn drawer-button lg:hidden mt-2.5 ml-auto mr-0"
+        >
+          SideBar
+        </label> */}
 
-        {/* Blog Details — HTML string ঠিকমতো render হবে */}
-        <div
-          className="p-8 prose prose-sm max-w-none text-black"
-          dangerouslySetInnerHTML={{ __html: blog.details }}
-        />
+        {/* Page content here */}
+        <label
+          htmlFor="my-drawer-3"
+          className="btn drawer-button lg:hidden mt-2.5 ml-auto mr-0"
+        >
+          SideBar
+        </label>
+        {children}
+      </div>
+      <div className="drawer-side max-lg:mt-16">
+        <label
+          htmlFor="my-drawer-3"
+          aria-label="close sidebar"
+          className="drawer-overlay"
+        ></label>
+        <ul className="menu bg-base-200 min-h-full w-80 p-4 space-y-2.5">
+          {/* Sidebar content here */}
+          {blogs.map((blog, index) => (
+            <li key={blog.id} className="card bg-base-100 shadow-xl">
+              <Link href={`/blogs/${blog.id}`} className="w-full">
+                {index + 1}. {blog.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
-};
+}
 
-export default BookDetailsPage;
+export default BlogsDetailsLayout;
