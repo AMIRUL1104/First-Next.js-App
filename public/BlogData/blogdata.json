@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "title": "Next.js Routing System",
+    "description": "Next.js এ file-based routing কিভাবে কাজ করে এবং dynamic route কিভাবে handle করতে হয়।",
+    "details": "\n<h2>📌 Routing কী?</h2>\n<p>Routing মানে হলো URL অনুযায়ী কোন page render হবে তা নির্ধারণ করা। Next.js এ এটি automatic হয় folder structure দিয়ে।</p>\n\n<h3>⚡ File-based Routing</h3>\n<ul>\n  <li><code>app/about/page.jsx</code> → /about</li>\n  <li><code>app/blog/page.jsx</code> → /blog</li>\n</ul>\n\n<h3>⚡ Dynamic Routing</h3>\n<p><code>app/blog/[id]/page.jsx</code></p>\n<p>Example: /blog/1, /blog/2</p>\n\n<h3>⚡ Nested Routing</h3>\n<p>Folder এর ভিতরে folder = nested route</p>\n\n<h3>🚀 Best Practice</h3>\n<ul>\n  <li>Clean folder structure maintain করো</li>\n  <li>Meaningful route name ব্যবহার করো</li>\n</ul>\n\n<h3>❌ Mistake</h3>\n<p>Random folder naming এবং unnecessary deep nesting</p>\n",
+    "author": "Amirul",
+    "date": "এপ্রিল ০৯, ২০২৬",
+    "category": "Next.js",
+    "readTime": "৫ মিনিট"
+  },
+  {
+    "id": 2,
+    "title": "Next.js Layout System",
+    "description": "Reusable layout ব্যবহার করে clean UI structure তৈরি করার best approach।",
+    "details": "\n<h2>📌 Layout কী?</h2>\n<p>Layout হলো reusable UI wrapper (Navbar, Footer)।</p>\n\n<h3>⚡ Basic Layout</h3>\n<pre><code>export default function Layout({ children }) {\n  return (\n    &lt;div&gt;\n      &lt;Navbar /&gt;\n      {children}\n      &lt;Footer /&gt;\n    &lt;/div&gt;\n  )\n}</code></pre>\n\n<h3>🎯 কেন গুরুত্বপূর্ণ?</h3>\n<ul>\n  <li>Code reuse হয়</li>\n  <li>Clean structure</li>\n</ul>\n\n<h3>🔥 Nested Layout</h3>\n<p>Different section এর জন্য আলাদা layout করা যায়</p>\n\n<h3>❌ Mistake</h3>\n<p>সবকিছু এক layout এ ঢুকানো</p>\n",
+    "author": "Amirul",
+    "date": "এপ্রিল ০৯, ২০২৬",
+    "category": "Next.js",
+    "readTime": "৪ মিনিট"
+  },
+  {
+    "id": 3,
+    "title": "Next.js Navigation System",
+    "description": "Client-side navigation ব্যবহার করে fast page transition কিভাবে করা যায়।",
+    "details": "\n<h2>📌 Navigation কী?</h2>\n<p>এক page থেকে অন্য page এ যাওয়ার system।</p>\n\n<h3>⚡ Link Component</h3>\n<pre><code>import Link from \"next/link\"\n\n&lt;Link href=\"/about\"&gt;About&lt;/Link&gt;</code></pre>\n\n<h3>⚡ useRouter</h3>\n<pre><code>\"use client\"\nimport { useRouter } from \"next/navigation\"\n\nconst router = useRouter()\nrouter.push(\"/dashboard\")</code></pre>\n\n<h3>🚀 Benefit</h3>\n<ul>\n  <li>No full page reload</li>\n  <li>Fast navigation</li>\n</ul>\n\n<h3>❌ Mistake</h3>\n<p>&lt;a&gt; tag ব্যবহার করা</p>\n",
+    "author": "Amirul",
+    "date": "এপ্রিল ০৯, ২০২৬",
+    "category": "Next.js",
+    "readTime": "৪ মিনিট"
+  },
+  {
+    "id": 4,
+    "title": "Server vs Client Component",
+    "description": "Next.js এ server component এবং client component এর পার্থক্য এবং ব্যবহার।",
+    "details": "\n<h2>📌 Server Component</h2>\n<p>Default component, fast এবং SEO friendly</p>\n\n<h2>📌 Client Component</h2>\n<p>\"use client\" ব্যবহার করতে হয়</p>\n\n<h3>⚖️ Difference</h3>\n<table>\n<tr><th>Feature</th><th>Server</th><th>Client</th></tr>\n<tr><td>Speed</td><td>Fast</td><td>Medium</td></tr>\n<tr><td>SEO</td><td>Good</td><td>Limited</td></tr>\n<tr><td>Interactivity</td><td>No</td><td>Yes</td></tr>\n</table>\n\n<h3>🚀 Usage</h3>\n<ul>\n  <li>Server → data fetching</li>\n  <li>Client → interactivity</li>\n</ul>\n\n<h3>❌ Mistake</h3>\n<p>সব component client বানানো</p>\n",
+    "author": "Amirul",
+    "date": "এপ্রিল ০৯, ২০২৬",
+    "category": "Next.js",
+    "readTime": "৬ মিনিট"
+  },
+  {
+    "id": 5,
+    "title": "Next.js Data Fetching",
+    "description": "Server-side data fetching এবং caching system কিভাবে কাজ করে।",
+    "details": "\n<h2>📌 Data Fetching</h2>\n<p>Server থেকে data আনা</p>\n\n<h3>⚡ Example</h3>\n<pre><code>const data = await fetch(\"https://api.com/posts\")</code></pre>\n\n<h3>⚡ Caching</h3>\n<ul>\n  <li>force-cache</li>\n  <li>no-store</li>\n</ul>\n\n<h3>⚡ Revalidation</h3>\n<pre><code>fetch(url, { next: { revalidate: 60 } })</code></pre>\n\n<h3>🚀 Benefit</h3>\n<ul>\n  <li>Fast loading</li>\n  <li>SEO friendly</li>\n</ul>\n\n<h3>❌ Mistake</h3>\n<p>Unnecessary client-side fetch</p>\n",
+    "author": "Amirul",
+    "date": "এপ্রিল ০৯, ২০২৬",
+    "category": "Next.js",
+    "readTime": "৫ মিনিট"
+  },
+  {
+    "id": 6,
+    "title": "Next.js Image Optimization",
+    "description": "Next Image component ব্যবহার করে performance optimize করার উপায়।",
+    "details": "\n<h2>📌 কেন দরকার?</h2>\n<p>Image website slow করে</p>\n\n<h3>⚡ Example</h3>\n<pre><code>import Image from \"next/image\"\n\n&lt;Image\n  src=\"/img.jpg\"\n  width={500}\n  height={300}\n  alt=\"image\"\n/&gt;</code></pre>\n\n<h3>🚀 Benefit</h3>\n<ul>\n  <li>Lazy loading</li>\n  <li>Auto resize</li>\n</ul>\n\n<h3>❌ Mistake</h3>\n<p>&lt;img&gt; tag ব্যবহার করা</p>\n",
+    "author": "Amirul",
+    "date": "এপ্রিল ০৯, ২০২৬",
+    "category": "Next.js",
+    "readTime": "৪ মিনিট"
+  },
+  {
+    "id": 7,
+    "title": "Next.js SEO Metadata",
+    "description": "Metadata ব্যবহার করে SEO improve করার best practice।",
+    "details": "\n<h2>📌 SEO Metadata</h2>\n<p>Search engine ranking improve করার জন্য ব্যবহৃত হয়</p>\n\n<h3>⚡ Example</h3>\n<pre><code>export const metadata = {\n  title: \"My Page\",\n  description: \"This is my page\"\n}</code></pre>\n\n<h3>⚡ Dynamic Metadata</h3>\n<pre><code>export async function generateMetadata({ params }) {\n  return {\n    title: params.slug\n  }\n}</code></pre>\n\n<h3>🚀 Benefit</h3>\n<ul>\n  <li>Better ranking</li>\n  <li>Social preview</li>\n</ul>\n\n<h3>❌ Mistake</h3>\n<p>Metadata ignore করা</p>\n",
+    "author": "Amirul",
+    "date": "এপ্রিল ০৯, ২০২৬",
+    "category": "Next.js",
+    "readTime": "৪ মিনিট"
+  }
+]

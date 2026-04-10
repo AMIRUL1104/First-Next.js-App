@@ -15,6 +15,9 @@ function Navbar() {
       <li>
         <Link href="/contact">Contact</Link>
       </li>
+      <li>
+        <Link href="/gallary">Gallary</Link>
+      </li>
     </>
   );
 

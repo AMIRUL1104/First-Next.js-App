@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 const blogs = [
   {
     id: 1,
@@ -253,19 +252,11 @@ router.push("/dashboard")</code></pre>
   },
 ];
 
-function BlogsDetailsLayout({ children }) {
+const BlogsDetailsLayout = ({ children }) => {
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content px-2.5 mb-5 flex flex-col items-center justify-center">
-        {/* dwawer for small device  */}
-        {/* <label
-          htmlFor="my-drawer-3"
-          className="btn drawer-button lg:hidden mt-2.5 ml-auto mr-0"
-        >
-          SideBar
-        </label> */}
-
         {/* Page content here */}
         <label
           htmlFor="my-drawer-3"
@@ -294,6 +285,6 @@ function BlogsDetailsLayout({ children }) {
       </div>
     </div>
   );
-}
+};
 
 export default BlogsDetailsLayout;
