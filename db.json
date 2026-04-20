@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "name": "Wireless Mouse",
+      "name": "Wireless pagla Mouse",
       "price": 950,
       "category": "Electronics",
       "stock": 65,
@@ -11,8 +11,8 @@
     },
     {
       "id": 2,
-      "name": "Bluetooth Headphone",
-      "price": 2200,
+      "name": "Bluetooth hair  Headphone",
+      "price": 42200,
       "category": "Electronics",
       "stock": 15,
       "rating": 4.5,
