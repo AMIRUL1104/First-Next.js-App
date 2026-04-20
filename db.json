@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Mouse",
+      "price": 950,
+      "category": "Electronics",
+      "stock": 65,
+      "rating": 4.3,
+      "description": "Smooth and responsive wireless mouse"
+    },
+    {
+      "id": 2,
+      "name": "Bluetooth Headphone",
+      "price": 2200,
+      "category": "Electronics",
+      "stock": 15,
+      "rating": 4.5,
+      "description": "Noise cancelling over-ear headphone"
+    },
+    {
+      "id": 3,
+      "name": "Smart Watch",
+      "price": 3500,
+      "category": "Gadgets",
+      "stock": 10,
+      "rating": 4.2,
+      "description": "Fitness tracking smart watch"
+    },
+    {
+      "id": 4,
+      "name": "Laptop Backpack",
+      "price": 1200,
+      "category": "Accessories",
+      "stock": 30,
+      "rating": 4.1,
+      "description": "Durable and water-resistant backpack"
+    },
+    {
+      "id": 5,
+      "name": "Mechanical Keyboard",
+      "price": 2800,
+      "category": "Electronics",
+      "stock": 12,
+      "rating": 4.6,
+      "description": "RGB mechanical gaming keyboard"
+    }
+  ]
+}
